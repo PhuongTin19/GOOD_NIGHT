@@ -1,0 +1,875 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #020111 0%,
+        #081f4f 45%,
+        #173b78 100%
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    color:white;
+
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+#stars,
+#shooting-stars,
+#hearts{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle 2s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.5);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.6);
+
+    }
+
+}
+
+/* ==========================================
+   SHOOTING STAR
+========================================== */
+
+.shooting-star{
+
+    position:absolute;
+
+    width:180px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        white,
+        rgba(255,255,255,0)
+    );
+
+    transform:rotate(-30deg);
+
+    animation:shoot 3s linear forwards;
+
+}
+
+@keyframes shoot{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        rotate(-30deg);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translate(-900px,900px)
+        rotate(-30deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   MOON
+========================================== */
+
+.moon{
+
+    position:absolute;
+
+    top:60px;
+
+    right:70px;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:#FFF8D6;
+
+    box-shadow:
+
+    0 0 30px white,
+
+    0 0 80px #FFEAA7,
+
+    0 0 150px #FFEAA7;
+
+    z-index:1;
+
+}
+
+.moon-glow{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    width:190px;
+
+    height:190px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    filter:blur(40px);
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card{
+
+    position:relative;
+
+    z-index:10;
+
+    width:700px;
+
+    max-width:90%;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 0 30px rgba(255,255,255,.12);
+
+    text-align:center;
+
+}
+
+.card h1{
+
+    font-size:58px;
+
+    font-family:
+
+    'Dancing Script',
+    cursive;
+
+    margin-bottom:15px;
+
+    animation:float 3s infinite;
+
+}
+
+.name{
+
+    color:#FFD54F;
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+    text-shadow:
+
+    0 0 15px gold;
+
+}
+
+.divider{
+
+    width:120px;
+
+    height:4px;
+
+    margin:20px auto;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        white,
+        transparent
+    );
+
+}
+
+.intro{
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    color:#F5F5F5;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.main-btn{
+
+    margin-top:35px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #FFD54F,
+        #FFB300
+    );
+
+    color:#222;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.main-btn:hover{
+
+    transform:
+
+    scale(1.08);
+
+    box-shadow:
+
+    0 0 25px gold;
+
+}
+
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
+
+.music-btn{
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(8px);
+
+    z-index:50;
+
+    transition:.3s;
+
+}
+
+.music-btn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================================
+   HEART
+========================================== */
+
+.heart{
+
+    position:absolute;
+
+    animation:heartFly linear forwards;
+
+    opacity:.9;
+
+}
+
+@keyframes heartFly{
+
+    0%{
+
+        transform:
+
+        translateY(100vh)
+        scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(-120vh)
+        scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================================
+   FLOAT
+========================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   POPUP
+========================================== */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(5px);
+
+    visibility:hidden;
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:999;
+
+}
+
+.popup.show{
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter{
+
+    position:relative;
+
+    width:600px;
+
+    max-width:92%;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.95),
+        rgba(245,245,255,.92)
+    );
+
+    color:#2c3e50;
+
+    text-align:center;
+
+    transform:
+
+    translateY(40px)
+    scale(.85);
+
+    transition:.45s;
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.popup.show .letter{
+
+    transform:
+
+    translateY(0)
+    scale(1);
+
+}
+
+.letter-top{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+
+    animation:float 2.5s infinite;
+
+}
+
+.letter h2{
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+    color:#2c3e50;
+
+}
+
+.letter h2 span{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#e91e63;
+
+    font-size:38px;
+
+    font-family:'Dancing Script',cursive;
+
+}
+
+.typing{
+
+    min-height:260px;
+
+    text-align:left;
+
+    line-height:2;
+
+    font-size:20px;
+
+    white-space:pre-line;
+
+    color:#444;
+
+    padding:10px 5px;
+
+}
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:22px;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    color:#888;
+
+    transition:.25s;
+
+}
+
+.close:hover{
+
+    color:#ff4081;
+
+    transform:rotate(90deg);
+
+}
+
+.close-btn{
+
+    margin-top:25px;
+
+    padding:14px 38px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff6fa5,
+        #ff4081
+    );
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+    0 0 20px rgba(255,64,129,.6);
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer{
+
+    position:absolute;
+
+    bottom:18px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ffc107;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+body{
+
+    padding:20px;
+
+}
+
+.card{
+
+    width:100%;
+
+    padding:28px 20px;
+
+    border-radius:22px;
+
+}
+
+.card h1{
+
+    font-size:42px;
+
+}
+
+.name{
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+}
+
+.intro{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+.main-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:17px;
+
+}
+
+.moon{
+
+    width:80px;
+
+    height:80px;
+
+    top:20px;
+
+    right:20px;
+
+}
+
+.moon-glow{
+
+    width:120px;
+
+    height:120px;
+
+    top:5px;
+
+    right:5px;
+
+}
+
+.music-btn{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:20px;
+
+}
+
+.letter{
+
+    padding:28px 20px;
+
+}
+
+.letter-top{
+
+    font-size:55px;
+
+}
+
+.letter h2{
+
+    font-size:26px;
+
+}
+
+.letter h2 span{
+
+    font-size:30px;
+
+}
+
+.typing{
+
+    min-height:200px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+.close-btn{
+
+    width:100%;
+
+}
+
+}
+
+@media (max-width:420px){
+
+.card h1{
+
+    font-size:34px;
+
+}
+
+.name{
+
+    font-size:24px;
+
+}
+
+.intro{
+
+    font-size:16px;
+
+}
+
+.typing{
+
+    font-size:16px;
+
+}
+
+.footer{
+
+    font-size:12px;
+
+}
+
+}
+
+/* ==========================================
+   END STYLE
+========================================== */
